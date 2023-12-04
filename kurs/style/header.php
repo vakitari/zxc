@@ -1,7 +1,10 @@
 <?php
 session_start();
-$_SESSION['showAdd'];
-$_SESSION['auth'];
+if(!isset($_SESSION['auth'])){
+    $_SESSION['auth'] = false;
+}
+$today = date("Y-m-d");
+echo $today;
 ?>
 <!doctype html>
 

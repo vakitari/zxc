@@ -1,6 +1,6 @@
 <?php
 include "../style/header.php";
-
+header('Content-Type: text/html; charset=utf-8');
 ?>
 <?php
 
@@ -13,12 +13,15 @@ while($student = mysqli_fetch_assoc($query))
 {
     $students[] = $student;
 }
-
 ?>
 
-
-<h2>Группа <?php echo $group['name_group'] ?> </h2>
-            <?php foreach ($students as $student): ?>
+<?php if(empty($students)) {
+         echo 'Пока что пусто'; }
+        else { ?>
+<h2>Группа <?php  echo $group['name_group'] ?> </h2>
+            <?php
+            
+                 foreach ($students as $student): ?>
                 <div>
                     <form action="" >
                         <p>ID: <?= $student['id'] ?></p>
@@ -27,7 +30,7 @@ while($student = mysqli_fetch_assoc($query))
                     </form>
                 </div>
             <?php endforeach; ?>
-
+            <?php  } ?>
 
 <?php
 include "../style/footer.php";
