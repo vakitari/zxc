@@ -14,7 +14,7 @@ $data = [];
         </div>
 
         <div class="mt-3">
-          <h3>  Cтудент</h4>
+          <h4>  Cтудент</h4>
         </div>
 
     </div>

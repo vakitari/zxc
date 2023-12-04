@@ -8,6 +8,7 @@
          
         $user = mysqli_fetch_assoc($query);
 		$_SESSION['user'] = $user['id'];
+        $_SESSION['role'] = $user['id_role'];
 		if (!empty($user)) {
 			unset($_SESSION['error']);
 			$_SESSION['auth'] = true;
