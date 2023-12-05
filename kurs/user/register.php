@@ -9,17 +9,51 @@ include "../style/header.php";
             <label class="form-label mt-3" > <h3> Регистация</h3></label>
 
             <form action="../service/reg.php" method="POST">
-                <label class="form-label mt-3" for="login"> Логин </label> <div class="d-flex flex-column justify-content-between">
-                <input class="form-control mt-1 " name="login" required maxlength="20" minlength="4"><?php
+                <label class="form-label mt-3" for="login" > Логин </label> <div class="d-flex flex-column justify-content-between">
+                <input class="form-control mt-1 " name="login" required maxlength="20" minlength="4" pattern ="^[a-zA-Z0-9]+$" title="Логин может стостоять только из цифр и лаинских букв."><?php
                 if(!empty($_SESSION['error'])) {?>
                 <p><?=$_SESSION['error']?></p>
                 <?php }unset($_SESSION['error']); ?></div>
                 <label class="form-label mt-2" for="mail"> Почта</label>
-                <input class="form-control mt-1" type="email" name="mail" required>
+                <input class="form-control mt-1" type="email" name="mail" required >
                 <label class="form-label mt-3" for="date_resp"> Дата рождения</label>
                 <input class="form-control mt-1 " type="date" name="date_resp" required>
+                <label for="country" class="mt-2">Страна проживания:</label>
+                <select class="form-select mt-2" id="country" name="country">
+                    <option value="">Выберите страну</option>
+                    <option value="china">Китай</option>
+                    <option value="indonesia">Индонезия</option>
+                    <option value="india">Индия</option>
+                    <option value="pakistan">Пакистан</option>
+                    <option value="brazil">Бразилия</option>
+                    <option value="netherlands">Нидерланды</option>
+                    <option value="bangladesh">Бангладеш</option>
+                    <option value="russia">Россия</option>
+                    <option value="mexico">Мексико</option>
+                    <option value="nigeria">Нигерия</option>
+                    <option value="british-virgin-islands">Британские Виргинские острова</option>
+                    <option value="belgium">Бельгия</option>
+                    <option value="germany">Германия</option>
+                    <option value="saudi-arabia">Саудовская Аравия</option>
+                    <option value="iran">Иран</option>
+                    <option value="south-africa">Южная Африка</option>
+                    <option value="jordan">Иордания</option>
+                    <option value="philippines">Филиппины</option>
+                    <option value="france">Франция</option>
+                    <option value="italy">Италия</option>
+                    <option value="tunisia">Тунис</option>
+                    <option value="algeria">Алжир</option>
+                    <option value="spain">Испания</option>
+                    <option value="poland">Польша</option>
+                    <option value="afghanistan">Афганистан</option>
+                    <option value="sudan">Судан</option>
+                    <option value="colombia">Колумбия</option>
+                    <option value="uganda">Уганда</option>
+                    <option value="argentina">Аргентина</option>
+                    <option value="poland">Польша</option>
+                </select>
                 <label class="form-label mt-3" for="password"> Пароль</label>
-                <input class="form-control mt-1" name="password" type="password" required maxlength="20" minlength="2">
+                <input class="form-control mt-1" name="password" type="password" required maxlength="20" minlength="2" pattern ="^[a-zA-Z0-9]+$" title="пароль может стостоять только из цифр и лаинских букв.">
                 <label class="form-label mt-3" for="password"> Подтверждение</label>
                 <div class="d-flex flex-column justify-content-between">
                 <input class="form-control mt-1" name="pas_conf" type="password" required maxlength="20" minlength="2"><?php
@@ -27,6 +61,7 @@ include "../style/header.php";
                     <p><?=$_SESSION['errorPass']?></p>
                     <?php }unset($_SESSION['errorPass']); ?></div>
                 <input class="form-control mt-2" type="submit">
+
             </form>
         </div>
 

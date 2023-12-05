@@ -5,7 +5,7 @@ session_start();
 
 $conn = mysqli_connect("localhost", "root", "", "users");
 $query = $conn->query("SELECT * FROM user");
-
+$users =[];
 while($user = mysqli_fetch_assoc($query))
 {
     $users[] = $user;
@@ -23,9 +23,11 @@ var_dump($_POST);
 		$mail = $_POST['mail'];
 		$date = $_POST['date_resp'];
 		$conf = $_POST['pas_conf'];
+		$country = $_POST['country'];
+		
 
 			if($password == $conf){
-				$query = $conn->query("INSERT INTO user SET login= '$login' , password= '$password',mail = '$mail', date_resp = '$date' ,pas_conf = '$conf', id_role = 1 ");
+				$query = $conn->query("INSERT INTO user SET login= '$login' , password= '$password',mail = '$mail', date_resp = '$date' ,pas_conf = '$conf', id_role = 1, country = '$country' ");
 				$_SESSION['auth'] = true;
                 $userId = mysqli_insert_id($conn);
                 $qRole = $conn->query("SELECT * FROM user");
