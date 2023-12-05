@@ -7,6 +7,7 @@ if(!isset($_SESSION['role'])){
     $_SESSION['role'] = 0;
 }
 $today = date("Y-m-d");
+
 ?>
 <!doctype html>
 
@@ -38,7 +39,7 @@ $today = date("Y-m-d");
                 </li>-->
             </ul>
             <?php if($_SESSION['role'] == 2) { ?>
-            <a class="nav-link active" aria-current="page" href="../lists/groups.php">админка</a>
+            <a class="nav-link active" aria-current="page" href="../admin/admin.php">админка</a>
             <?php } ?>
             <?php if (!$_SESSION["auth"]) {   ?>
             <button onclick="location.href='../user/login.php';" class="btn btn-secondary m-2">Вход</button>

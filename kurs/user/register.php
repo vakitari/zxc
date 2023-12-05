@@ -54,7 +54,7 @@ include "../style/header.php";
                 </select>
                 <label class="form-label mt-3" for="password"> Пароль</label>
                 <input class="form-control mt-1" name="password" type="password" required maxlength="20" minlength="2" pattern ="^[a-zA-Z0-9]+$" title="пароль может стостоять только из цифр и лаинских букв.">
-                <label class="form-label mt-3" for="password"> Подтверждение</label>
+                <label class="form-label mt-3" for="password"> Подтверждение пароля</label>
                 <div class="d-flex flex-column justify-content-between">
                 <input class="form-control mt-1" name="pas_conf" type="password" required maxlength="20" minlength="2"><?php
                     if(!empty($_SESSION['errorPass'])) {?>

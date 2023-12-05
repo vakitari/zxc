@@ -1,3 +1,9 @@
+
+<?php
+include "../style/header.php";
+
+
+?>
 <?php
 
 $conn = mysqli_connect("localhost", "root", "", "users");
@@ -15,12 +21,6 @@ if (!empty($_SESSION['errDate'])){
 
 
 ?>
-<?php
-include "../style/header.php";
-
-
-?>
-
 <h1>Добавьте дату</h1>
         <form action="../service/date.php" method="post">
             <div class="col-2 mt-2">
