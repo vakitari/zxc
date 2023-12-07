@@ -19,6 +19,7 @@ if (!empty($_SESSION['error'])) {
                 <input class="form-control mt-1 " name="login">
                 <label class="form-label mt-3" for="password"> Пароль</label>
                 <input class="form-control mt-1" name="password" type="password">
+                <input type="checkbox" required> Я человек
                 <input class="form-control mt-2" type="submit">
             </form>
         </div>

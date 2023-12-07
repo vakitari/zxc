@@ -60,6 +60,7 @@ include "../style/header.php";
                     if(!empty($_SESSION['errorPass'])) {?>
                     <p><?=$_SESSION['errorPass']?></p>
                     <?php }unset($_SESSION['errorPass']); ?></div>
+                    <input type="checkbox" required> Я человек
                 <input class="form-control mt-2" type="submit">
 
             </form>

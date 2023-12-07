@@ -24,7 +24,7 @@ while($student = mysqli_fetch_assoc($query))
                  foreach ($students as $student): ?>
                 <div>
                     <form action="" >
-                        <p>ID: <?= $student['id'] ?></p>
+                    
                         <a class="link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-25-hover" href = "student.php?id=<?=$student['id']?>"> <p>ФИО: <?= $student['surname'] ?> <?= $student['name'] ?> <?= $student['lastname'] ?></p></a>
                         <hr>
                     </form>

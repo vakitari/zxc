@@ -24,10 +24,10 @@ if (!empty($_SESSION['errDate'])){
 <h1>Добавьте дату</h1>
         <form action="../service/date.php" method="post">
             <div class="col-2 mt-2">
-                <input name="date" type="date"></div>
+                <input name="date" type="date" required></div>
             <p class="mt-2">Присутствовал в этот день?</p>
             <div class="col-2">
-            <select class="form-select" name="presence" id="cars">
+            <select class="form-select" name="presence" id="cars" >
                 <option value="1">Да</option>
                 <option value="0">Нет</option>
 
