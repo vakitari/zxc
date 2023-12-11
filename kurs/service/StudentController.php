@@ -14,7 +14,7 @@ class StudentController {
     public function edit($name, $surname, $lastname,$id,$id_groups) {
         $connection = new mysqli("localhost", "root", "", "users");
         $result = $connection->query("UPDATE students SET name='$name', surname='$surname', lastname='$lastname', id_groups = '$id_groups' WHERE id='$id'");
-       
+
         if (!$result) {
             die("Error editing record: " . $this->connection->error);
         }

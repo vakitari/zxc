@@ -16,8 +16,11 @@ if ($_SESSION['role'] != 2) {
 require_once '../service/StudentController.php';
 $manager = new StudentController("localhost", "root", "", "users");
 if (isset($_GET['delete'])) {
-    $manager->delete("students", $_GET['delete']);
-    echo "<script>location.reload();</script>";
+
+
+        $manager->delete("students", $_GET['delete']);
+        header("location:studentAdmin.php");
+
 
 }
 
@@ -26,8 +29,9 @@ if (isset($_GET['delete'])) {
 ?>
 
 
+    <a href="admin.php" class="link-dark link-offset-2 link-underline-opacity-0 "><h1><-</h1></a>
 
-<h4>Это список всех студентов</h4>
+    <h4>Это список всех студентов</h4>
 <?php if(empty($students)) {
     echo 'Пока что пусто'; }
 else { ?>

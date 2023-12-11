@@ -18,6 +18,7 @@ while($user = mysqli_fetch_assoc($query))
     $users[] = $user;
 }
 ?>
+    <a href="admin.php" class="link-dark link-offset-2 link-underline-opacity-0 "><h1><-</h1></a>
 
 
 <?php if(empty($users)) {

@@ -13,8 +13,7 @@ class GroupController {
 
     public function edit($name,$id) {
         $connection = new mysqli("localhost", "root", "", "users");
-        $result = $connection->query("UPDATE Groups SET name_group='$name'WHERE id='$id'");
-      
+        $result = $connection->query("UPDATE groups SET name_group='$name' WHERE id='$id'");
         if (!$result) {
             die("Error editing record: " . $this->connection->error);
         }

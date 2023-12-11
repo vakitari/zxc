@@ -6,7 +6,7 @@ include "../style/header.php";
 
 
         <div class="col-lg-3 mt-3">
-            <label class="form-label mt-3" > <h3> Регистация</h3></label>
+            <label class="form-label mt-1" > <h3> Регистация</h3></label>
 
             <form action="../service/reg.php" method="POST">
                 <label class="form-label mt-3" for="login" > Логин </label> <div class="d-flex flex-column justify-content-between">
@@ -60,7 +60,17 @@ include "../style/header.php";
                     if(!empty($_SESSION['errorPass'])) {?>
                     <p><?=$_SESSION['errorPass']?></p>
                     <?php }unset($_SESSION['errorPass']); ?></div>
-                    <input type="checkbox" required> Я человек
+                <?php
+                $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                $charactersLength = strlen($characters);
+                $randomString = '';
+                for ($i = 0; $i < 5; $i++) {
+                    $randomString .= $characters[rand(0, $charactersLength - 1)];
+                }
+                ?>
+                <h1 class="mt-2" style="background-color: blue;color: red;user-select: none; text-align: center"> <?= $randomString?> </h1>
+                <input class="form-control mt-1" pattern="<?= $randomString?>" type="text" title="Чтобы подтвердить что вы не робот вы должны ввести текст который совподает с тем что выше" placeholder="Введите текст выше" required>
+
                 <input class="form-control mt-2" type="submit">
 
             </form>

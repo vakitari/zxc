@@ -24,11 +24,12 @@ if (isset($_GET['delete'])) {
 ?>
 
 
+    <a href="admin.php" class="link-dark link-offset-2 link-underline-opacity-0 "><h1><-</h1></a>
 
-<h4>Это список всех Предметов</h4><?php if(!$_SESSION['auth']) {
+    <h4>Это список всех Предметов</h4><?php if(!$_SESSION['auth']) {
 }
-        else { ?>
-<button type="button" onclick="location.href='../add/addGroup.php';" class="btn btn-outline-secondary col-2 mb-2">Добавить Премет</button>
+else { ?>
+    <button type="button" onclick="location.href='../add/addGroup.php';" class="btn btn-outline-secondary col-2 mb-2">Добавить Премет</button>
 <?php  } ?>
 <?php if(empty($themes)) {
     echo 'Пока что пусто'; }
